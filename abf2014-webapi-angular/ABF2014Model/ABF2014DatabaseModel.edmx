@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FacturacaoAmbimedModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FacturacaoAmbimedModelStoreContainer" />
+        <Function Name="CheckForErrorsPhase1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataclean">
+          <Parameter Name="token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PeriodoFacturacaoID" Type="int" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="FillContractTempTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataload">
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PeriodoFacturacaoID" Type="int" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="FillCustomerTempTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataload">
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="FillCustomerUniverse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataload">
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="Clientes" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="FillRemainingTempTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataload">
+          <Parameter Name="TOKEN" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="GenerateExecutionToken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataload">
+          <Parameter Name="RequestedBy" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA10" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="TOKEN" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA12" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="TOKEN" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA13" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA14" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA15" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA16" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA17" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA18" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA19" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA20" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="TOKEN" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA21" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA22" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA23" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA6" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA7" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA8" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_REGRA9" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="MRF_SETUP_AUX_TABLES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ClienteID" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodoFacturacao" Type="int" Mode="In" />
+          <Parameter Name="CreatedBySession" Type="uniqueidentifier" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacturacaoAmbimedModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FacturacaoAmbimedEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="CheckForErrorsPhase1">
+            <Parameter Name="token" Mode="In" Type="Guid" />
+            <Parameter Name="PeriodoFacturacaoID" Mode="In" Type="Int32" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FillContractTempTables">
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="PeriodoFacturacaoID" Mode="In" Type="Int32" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FillCustomerTempTable">
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FillCustomerUniverse">
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="Clientes" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="FillRemainingTempTables">
+            <Parameter Name="TOKEN" Mode="In" Type="Guid" />
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateExecutionToken">
+            <Parameter Name="RequestedBy" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="InOut" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA1">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA10">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA11">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="TOKEN" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA12">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="TOKEN" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA13">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA14">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA15">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA16">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA17">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA18">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA19">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA2">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA20">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="TOKEN" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA21">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA22">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA23">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA3">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA4">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA5">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA6">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA7">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA8">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_REGRA9">
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MRF_SETUP_AUX_TABLES">
+            <Parameter Name="ClienteID" Mode="In" Type="String" />
+            <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
+            <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacturacaoAmbimedModelStoreContainer" CdmEntityContainer="FacturacaoAmbimedEntities" >
+          <FunctionImportMapping FunctionImportName="CheckForErrorsPhase1" FunctionName="FacturacaoAmbimedModel.Store.CheckForErrorsPhase1" />
+          <FunctionImportMapping FunctionImportName="FillContractTempTables" FunctionName="FacturacaoAmbimedModel.Store.FillContractTempTables" />
+          <FunctionImportMapping FunctionImportName="FillCustomerTempTable" FunctionName="FacturacaoAmbimedModel.Store.FillCustomerTempTable" />
+          <FunctionImportMapping FunctionImportName="FillCustomerUniverse" FunctionName="FacturacaoAmbimedModel.Store.FillCustomerUniverse" />
+          <FunctionImportMapping FunctionImportName="FillRemainingTempTables" FunctionName="FacturacaoAmbimedModel.Store.FillRemainingTempTables" />
+          <FunctionImportMapping FunctionImportName="GenerateExecutionToken" FunctionName="FacturacaoAmbimedModel.Store.GenerateExecutionToken" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA1" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA1" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA10" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA10" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA11" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA11" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA12" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA12" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA13" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA13" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA14" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA14" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA15" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA15" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA16" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA16" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA17" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA17" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA18" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA18" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA19" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA19" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA2" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA2" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA20" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA20" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA21" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA21" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA22" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA22" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA23" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA23" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA3" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA3" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA4" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA4" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA5" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA5" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA6" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA6" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA7" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA7" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA8" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA8" />
+          <FunctionImportMapping FunctionImportName="MRF_REGRA9" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA9" />
+          <FunctionImportMapping FunctionImportName="MRF_SETUP_AUX_TABLES" FunctionName="FacturacaoAmbimedModel.Store.MRF_SETUP_AUX_TABLES" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
