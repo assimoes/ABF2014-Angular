@@ -69,19 +69,25 @@
     <br />
     <div class="row">
         <div class="col-md-12">
+            <blockquote>
+                {{vm.PhaseDesc}}
+            </blockquote>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
             <button data-ng-click="vm.ProcessBilling()" class="btn btn-primary" ng-class="{disabled: vm.IsProcessing}">Processar</button>
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-md-12">
-            Phase: {{vm.PhaseDesc}}
-                        <ul>
-                            <li data-ng-repeat="r in vm.billingResponse">{{r.Response}}
-                            </li>
-                        </ul>
+            <ul>
+                <li data-ng-repeat="r in vm.billingResponse">{{r.Response}}
+                </li>
+            </ul>
         </div>
     </div>
-
 
 </section>
