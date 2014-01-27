@@ -20,7 +20,7 @@
         function link(scope, element, attrs) {
             var $sidebarInner = element.find('.sidebar-inner');
             var $dropdownElement = element.find('.sidebar-dropdown a');
-            element.addClass('sidebar');
+           // element.addClass('sidebar');
             $win.resize(resize);
             $dropdownElement.click(dropdown);
 

@@ -21,6 +21,7 @@
         vm.ProcessBilling = ProcessBilling;
         vm.Phase = '';
         vm.PhaseDesc = '';
+        vm.IsProcessing = false;
 
         function activate() {
             common.activateController([], controllerId)
@@ -28,10 +29,11 @@
         }
 
         function ProcessBilling() {
-
+            vm.IsProcessing = true;
             vm.billingResponse = [];
             vm.PhaseDesc = 'A obter credencial de facturação';
             ambifacservice.GetAccessToken().then(function (t) {
+
                 var response = t[0].data;
                 var token = response.replace(/"/g, '');
                 vm.PhaseDesc = 'A definir cliente(s) a faturar...Aguarde';
@@ -50,6 +52,7 @@
                             }).then(function (data) {
                                 vm.PhaseDesc = 'Processo concluido.';
                                 vm.Phase = '8';//fim
+                                vm.IsProcessing = false;
                             })
                         })
                     })
