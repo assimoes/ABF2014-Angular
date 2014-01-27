@@ -1,86 +1,85 @@
 ﻿<section class="mainbar" data-ng-controller="importacao as vm">
-    <section class="matter">
-        <div class="container-fluid">
-            <div class="row-fluid">
-
-                <div class="widget wviolet">
-                    
-                    <div class="widget-content user">
-                        <h3>Importação de Dados</h3>
-
-                        <div class="row-fluid">
-                            <div class="span8">
-                                <div data-ng-switch="vm.Phase">
-                                    <div data-ng-switch-when="0">
-                                        <i class="fa fa-4x fa-sitemap green0"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-cog inactive"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-wrench inactive"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-check inactive"></i>
-                                    </div>
-                                    <div data-ng-switch-when="1">
-                                      <i class="fa fa-4x fa-sitemap green0"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green1"></i>
-                                        <i class="fa fa-4x fa-cog green1"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-wrench inactive"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-check inactive"></i>
-                                    </div>
-                                     <div data-ng-switch-when="2">
-                                    <i class="fa fa-4x fa-sitemap green0"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green1"></i>
-                                        <i class="fa fa-4x fa-cog green1"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green2"></i>
-                                        <i class="fa fa-4x fa-wrench green2"></i>
-                                         <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-check inactive"></i>
-                                    </div>
-                                     <div data-ng-switch-when="3">
-                                    <i class="fa fa-4x fa-sitemap green0"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green1"></i>
-                                        <i class="fa fa-4x fa-cog green1"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green2"></i>
-                                        <i class="fa fa-4x fa-wrench green2"></i>
-                                         <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-check inactive"></i>
-                                    </div>
-                                    <div data-ng-switch-when="8">
-                                    <i class="fa fa-4x fa-sitemap green0"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green1"></i>
-                                        <i class="fa fa-4x fa-cog green1"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green2"></i>
-                                        <i class="fa fa-4x fa-wrench green2"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right green3"></i>
-                                        <i class="fa fa-4x fa-check green3"></i>
-                                    </div>
-                                   <div data-ng-switch-default>
-                                      <i class="fa fa-4x fa-sitemap inactive"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-cog inactive"></i>
-                                        <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-wrench inactive"></i>
-                                       <i class="fa fa-4x fa-long-arrow-right inactive"></i>
-                                        <i class="fa fa-4x fa-check inactive"></i>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Importação de Dados</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div data-ng-switch="vm.Phase">
+                        <div data-ng-switch-when="0">
+                            <i class="fa fa-4x fa-sitemap green0"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-cog inactive"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-wrench inactive"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-check inactive"></i>
                         </div>
-
-                        <button data-ng-click="vm.ProcessBilling()">Processar</button>
-                        Phase: {{vm.PhaseDesc}}
+                        <div data-ng-switch-when="1">
+                            <i class="fa fa-4x fa-sitemap green0"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green1"></i>
+                            <i class="fa fa-4x fa-cog green1"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-wrench inactive"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-check inactive"></i>
+                        </div>
+                        <div data-ng-switch-when="2">
+                            <i class="fa fa-4x fa-sitemap green0"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green1"></i>
+                            <i class="fa fa-4x fa-cog green1"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green2"></i>
+                            <i class="fa fa-4x fa-wrench green2"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-check inactive"></i>
+                        </div>
+                        <div data-ng-switch-when="3">
+                            <i class="fa fa-4x fa-sitemap green0"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green1"></i>
+                            <i class="fa fa-4x fa-cog green1"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green2"></i>
+                            <i class="fa fa-4x fa-wrench green2"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-check inactive"></i>
+                        </div>
+                        <div data-ng-switch-when="8">
+                            <i class="fa fa-4x fa-sitemap green0"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green1"></i>
+                            <i class="fa fa-4x fa-cog green1"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green2"></i>
+                            <i class="fa fa-4x fa-wrench green2"></i>
+                            <i class="fa fa-4x fa-long-arrow-right green3"></i>
+                            <i class="fa fa-4x fa-check green3"></i>
+                        </div>
+                        <div data-ng-switch-default>
+                            <i class="fa fa-4x fa-sitemap inactive"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-cog inactive"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-wrench inactive"></i>
+                            <i class="fa fa-4x fa-long-arrow-right inactive"></i>
+                            <i class="fa fa-4x fa-check inactive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <button data-ng-click="vm.ProcessBilling()">Processar</button>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    Phase: {{vm.PhaseDesc}}
                         <ul>
                             <li data-ng-repeat="r in vm.billingResponse">{{r.Response}}
                             </li>
                         </ul>
-                    </div>
-                    <div class="widget-foot">
-                        <div class="clearfix"></div>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </section>
