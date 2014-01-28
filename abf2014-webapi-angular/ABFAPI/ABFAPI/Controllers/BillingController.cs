@@ -183,8 +183,18 @@ namespace ABFAPI.Controllers
 
         }
 
-     
 
+        [HttpGet]
+        public IResponse DataCleanUp(Guid token)
+        {
+            _context.CleanUpWorkerTables(token);
+            IResponse response = new BillingResponse();
+            response.Response = "Data Clean Up complete";
+            response.Status = 100;
+            response.Phase = 8;
+
+            return response;
+        }
 
         [HttpGet]
         public IResponse[] performbilling(Guid token, int periodofacturacao, string clientes)

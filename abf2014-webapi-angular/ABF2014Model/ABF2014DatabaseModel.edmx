@@ -11,6 +11,9 @@
           <Parameter Name="PeriodoFacturacaoID" Type="int" Mode="In" />
           <Parameter Name="Result" Type="varchar(max)" Mode="InOut" />
         </Function>
+        <Function Name="CleanUpWorkerTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataclean">
+          <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="FillContractTempTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dataload">
           <Parameter Name="Token" Type="uniqueidentifier" Mode="In" />
           <Parameter Name="PeriodoFacturacaoID" Type="int" Mode="In" />
@@ -355,6 +358,9 @@
             <Parameter Name="PeriodoFacturacao" Mode="In" Type="Int32" />
             <Parameter Name="CreatedBySession" Mode="In" Type="Guid" />
           </FunctionImport>
+          <FunctionImport Name="CleanUpWorkerTables">
+            <Parameter Name="Token" Mode="In" Type="Guid" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -392,6 +398,7 @@
           <FunctionImportMapping FunctionImportName="MRF_REGRA8" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA8" />
           <FunctionImportMapping FunctionImportName="MRF_REGRA9" FunctionName="FacturacaoAmbimedModel.Store.MRF_REGRA9" />
           <FunctionImportMapping FunctionImportName="MRF_SETUP_AUX_TABLES" FunctionName="FacturacaoAmbimedModel.Store.MRF_SETUP_AUX_TABLES" />
+          <FunctionImportMapping FunctionImportName="CleanUpWorkerTables" FunctionName="FacturacaoAmbimedModel.Store.CleanUpWorkerTables" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

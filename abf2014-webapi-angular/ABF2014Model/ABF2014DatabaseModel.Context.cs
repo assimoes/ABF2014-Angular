@@ -510,5 +510,14 @@ namespace ABF2014Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MRF_SETUP_AUX_TABLES", clienteIDParameter, periodoFacturacaoParameter, createdBySessionParameter);
         }
+    
+        public virtual int CleanUpWorkerTables(Nullable<System.Guid> token)
+        {
+            var tokenParameter = token.HasValue ?
+                new ObjectParameter("Token", token) :
+                new ObjectParameter("Token", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CleanUpWorkerTables", tokenParameter);
+        }
     }
 }
