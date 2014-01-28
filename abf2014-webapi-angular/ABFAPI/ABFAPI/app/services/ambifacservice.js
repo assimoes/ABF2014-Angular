@@ -18,7 +18,8 @@
             ExecutePhase1: ExecutePhase1,
             ExecutePhase2: ExecutePhase2,
             ExecutePhase3: ExecutePhase3,
-            GetAccessToken: GetAccessToken
+            GetAccessToken: GetAccessToken,
+            DataCleanUp: DataCleanUp
          
         };
 
@@ -49,6 +50,10 @@
 
         function ExecutePhase3(token) {
             return $q.all([$http.get('http://localhost:18855/api/Billing/ExecutePhase3/' + token + '/112')]);
+        }
+
+        function DataCleanUp(token) {
+            return $q.all([$http.get('http://localhost:18855/api/Billing/DataCleanUp/' + token)]);
         }
     }
 })();
